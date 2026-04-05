@@ -71,3 +71,10 @@ Result: 317 rows
 The WHERE clause filters records to include only orders handled by employees with IDs between 4 and 10.
 This reduces the dataset size while preserving join integrity.
 The filtering is applied after JOIN operations, ensuring correct dataset restriction.
+
+### Task 4.4 — GROUP BY category_name
+
+### Explanation:
+Data is grouped by category name.
+COUNT(*) calculates number of records per category.
+AVG(quantity) calculates average product quantity per category.
