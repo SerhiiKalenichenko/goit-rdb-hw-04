@@ -61,4 +61,4 @@ Result: 518 rows (same as INNER JOIN)
 
 ### Explanation:
 RIGHT JOIN did not change the number of rows, which means that all records in the orders table have corresponding records in order_details.
-No unmatched records exist on either side of the join.
+No orphan records exist in the joined tables.
