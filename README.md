@@ -76,5 +76,5 @@ The filtering is applied after JOIN operations, ensuring correct dataset restric
 
 ### Explanation:
 Data is grouped by category name.
-COUNT(*) calculates number of records per category.
-AVG(quantity) calculates average product quantity per category.
+COUNT(*) returns the number of records per category.
+AVG(order_details.quantity) calculates the average quantity of products within each category.
