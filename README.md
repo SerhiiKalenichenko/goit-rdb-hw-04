@@ -8,7 +8,7 @@ This project demonstrates:
 - data insertion using DML
 - complex multi-table queries using JOIN
 
-## Tasks виконано
+## Tasks created
 
 ### Task 1 — DDL
 Created database `LibraryManagement` with tables:
