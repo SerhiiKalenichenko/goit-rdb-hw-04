@@ -68,5 +68,6 @@ No orphan records exist in the joined tables.
 Result: 317 rows
 
 ### Explanation:
-The WHERE clause filters records where employee_id is greater than 3 and less than or equal to 10.
-This reduces the dataset to only orders handled by selected employees.
+The WHERE clause filters records to include only orders handled by employees with IDs between 4 and 10.
+This reduces the dataset size while preserving join integrity.
+The filtering is applied after JOIN operations, ensuring correct dataset restriction.
