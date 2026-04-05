@@ -10,7 +10,7 @@ This project demonstrates:
 
 ### Tasks created
 
-### Task 1 — DDL
+## Task 1 — DDL
 Created database `LibraryManagement` with tables:
 - authors
 - genres
@@ -20,10 +20,10 @@ Created database `LibraryManagement` with tables:
 
 Defined primary and foreign keys.
 
-### Task 2 — DML
+## Task 2 — DML
 Inserted test data into all tables with соблюдение referential integrity.
 
-### Task 3 — Complex JOIN
+## Task 3 — Complex JOIN
 Built a multi-table INNER JOIN query for the Northwind dataset:
 - order_details
 - orders
@@ -41,21 +41,21 @@ Validated result using COUNT (expected ~518 rows).
 - `screenshots/` — execution results
 - `README.md` — project description
 
-### Task 4.1 — COUNT
+## Task 4.1 — COUNT
 Result: 518
 
 ### Explanation:
 COUNT(*) shows total number of rows returned by INNER JOIN across all tables.
 This value is used as baseline for comparing LEFT/RIGHT JOIN behavior.
 
-### Task 4.2 — LEFT JOIN
+## Task 4.2 — LEFT JOIN
 Result: 518 rows (same as INNER JOIN)
 
 ### Explanation:
 LEFT JOIN did not change the number of rows because all records have matching values in joined tables.
 No NULL values appeared after LEFT JOIN.
 
-### Task 4.2 — RIGHT JOIN
+## Task 4.2 — RIGHT JOIN
 
 Result: 518 rows (same as INNER JOIN)
 
@@ -63,7 +63,7 @@ Result: 518 rows (same as INNER JOIN)
 RIGHT JOIN did not change the number of rows, which means that all records in the orders table have corresponding records in order_details.
 No orphan records exist in the joined tables.
 
-### Task 4.3 — Filter by employee_id
+## Task 4.3 — Filter by employee_id
 
 Result: 317 rows
 
@@ -72,14 +72,14 @@ The WHERE clause filters records to include only orders handled by employees wit
 This reduces the dataset size while preserving join integrity.
 The filtering is applied after JOIN operations, ensuring correct dataset restriction.
 
-### Task 4.4 — GROUP BY category_name
+## Task 4.4 — GROUP BY category_name
 
 ### Explanation:
 Data is grouped by category name.
 COUNT(*) returns the number of records per category.
 AVG(order_details.quantity) calculates the average quantity of products within each category.
 
-### Task 4.5 — GROUP BY and AVG
+## Task 4.5 — GROUP BY and AVG
 
 ### Result:
 Aggregated data by category with total number of orders and average quantity.
