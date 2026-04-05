@@ -95,6 +95,7 @@ INNER JOIN shippers AS s
 INNER JOIN suppliers AS sup
     ON p.supplier_id = sup.id;
 
+-- Task 4.1 COUNT
 SELECT COUNT(*) AS total_rows
 FROM order_details AS od
 INNER JOIN orders AS o
