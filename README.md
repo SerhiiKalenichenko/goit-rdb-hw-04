@@ -98,3 +98,12 @@ Rows are sorted in descending order based on the number of records in each categ
 
 ### Explanation:
 ORDER BY COUNT(*) DESC ensures that categories with the highest number of records appear first.
+
+## Task 4.7 — LIMIT and OFFSET
+
+### Result:
+Displayed 4 rows after skipping the first one.
+
+### Explanation:
+OFFSET 1 skips the first row, and LIMIT 4 returns the next four rows.
+This is used for pagination of query results.
