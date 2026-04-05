@@ -2,29 +2,48 @@
 
 Homework for Topic 4: DDL, DML and complex SQL queries.
 
-### Overview
+---
+
+## Overview
 This project demonstrates:
 - database schema design using DDL
 - data insertion using DML
 - complex multi-table queries using JOIN
+- data aggregation, filtering and sorting
 
-### Tasks created
+---
 
 ## Task 1 — DDL
-Created database `LibraryManagement` with tables:
+
+Created database `LibraryManagement` with the following tables:
 - authors
 - genres
 - books
 - users
 - borrowed_books
 
-Defined primary and foreign keys.
+Implemented:
+- primary keys for all tables
+- foreign key relationships:
+  - books → authors, genres
+  - borrowed_books → books, users
+
+The schema ensures referential integrity and consistent data structure.
+
+---
 
 ## Task 2 — DML
-Inserted test data into all tables with соблюдение referential integrity.
+
+Inserted test data into all tables:
+- at least one or two records per table
+- all relationships are valid and consistent
+- foreign keys correctly reference parent tables
+
+---
 
 ## Task 3 — Complex JOIN
-Built a multi-table INNER JOIN query for the Northwind dataset:
+
+Executed a query combining all tables from the dataset:
 - order_details
 - orders
 - customers
@@ -34,76 +53,89 @@ Built a multi-table INNER JOIN query for the Northwind dataset:
 - shippers
 - suppliers
 
-Validated result using COUNT (expected ~518 rows).
+Used `INNER JOIN` with proper key relationships to retrieve a unified dataset.
 
-### Repository structure
-- `queries.sql` — all SQL scripts
-- `screenshots/` — execution results
-- `README.md` — project description
+---
 
-## Task 4.1 — COUNT
-Result: 518
+## Task 4 — Analytical Queries
 
-### Explanation:
-COUNT(*) shows total number of rows returned by INNER JOIN across all tables.
-This value is used as baseline for comparing LEFT/RIGHT JOIN behavior.
+### 4.1 COUNT
+Calculated total number of rows in the joined dataset using:
+- `COUNT(*)`
 
-## Task 4.2 — LEFT JOIN
-Result: 518 rows (same as INNER JOIN)
+---
 
-### Explanation:
-LEFT JOIN did not change the number of rows because all records have matching values in joined tables.
-No NULL values appeared after LEFT JOIN.
+### 4.2 LEFT JOIN / RIGHT JOIN
 
-## Task 4.2 — RIGHT JOIN
+Replaced `INNER JOIN` with `LEFT JOIN` and `RIGHT JOIN`.
 
-Result: 518 rows (same as INNER JOIN)
+Result:
+- number of rows remained unchanged
 
-### Explanation:
-RIGHT JOIN did not change the number of rows, which means that all records in the orders table have corresponding records in order_details.
-No orphan records exist in the joined tables.
+Reason:
+- all records have matching relationships across tables
+- additional rows are not introduced
+- further `INNER JOIN` operations filter out unmatched records
 
-## Task 4.3 — Filter by employee_id
+---
 
-Result: 317 rows
+### 4.3 Filtering
 
-### Explanation:
-The WHERE clause filters records to include only orders handled by employees with IDs between 4 and 10.
-This reduces the dataset size while preserving join integrity.
-The filtering is applied after JOIN operations, ensuring correct dataset restriction.
+Filtered dataset using:
+- `employee_id > 3 AND employee_id <= 10`
 
-## Task 4.4 — GROUP BY category_name
+---
 
-### Explanation:
-Data is grouped by category name.
-COUNT(*) returns the number of records per category.
-AVG(order_details.quantity) calculates the average quantity of products within each category.
+### 4.4 GROUP BY + Aggregation
 
-## Task 4.5 — GROUP BY and AVG
+Grouped results by category name:
+- counted number of rows
+- calculated average quantity (`AVG(order_details.quantity)`)
 
-### Result:
-Aggregated data by category with total number of orders and average quantity.
+---
 
-### Explanation:
-The query groups records by category name and calculates:
-- total number of rows per category (COUNT)
-- average product quantity (AVG)
+### 4.5 HAVING
 
-HAVING is used to filter groups where the average quantity is greater than 21.
+Filtered grouped results:
+- selected only categories where average quantity > 21
 
-## Task 4.6 — ORDER BY
+---
 
-### Result:
-Rows are sorted in descending order based on the number of records in each category.
+### 4.6 ORDER BY
 
-### Explanation:
-ORDER BY COUNT(*) DESC ensures that categories with the highest number of records appear first.
+Sorted results:
+- by row count in descending order
 
-## Task 4.7 — LIMIT and OFFSET
+---
 
-### Result:
-Displayed 4 rows after skipping the first one.
+### 4.7 LIMIT OFFSET
 
-### Explanation:
-OFFSET 1 skips the first row, and LIMIT 4 returns the next four rows.
-This is used for pagination of query results.
+Selected subset of results:
+- skipped first row
+- returned next 4 rows
+
+---
+
+## Repository Structure
+
+- `queries.sql` — all SQL queries for tasks 1–4
+- `screenshots/` — execution results and queries
+  - `p1_*` — DDL (database and tables)
+  - `p2_*` — data insertion
+  - `p3_*` — JOIN query
+  - `p4_*` — analytical queries
+
+---
+
+## Conclusion
+
+All tasks were completed according to the requirements:
+- database schema created
+- data inserted
+- queries executed successfully
+- results validated with screenshots
+
+The solution is consistent, reproducible and ready for evaluation.
+
+---
+
