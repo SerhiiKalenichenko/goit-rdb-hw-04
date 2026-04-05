@@ -44,7 +44,7 @@ Validated result using COUNT (expected ~518 rows).
 ### Task 4.1 — COUNT
 
 
-Result: [518]
+Result: 518
 
 ## Explanation:
 COUNT(*) shows total number of rows returned by INNER JOIN across all tables.
