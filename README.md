@@ -62,3 +62,11 @@ Result: 518 rows (same as INNER JOIN)
 ### Explanation:
 RIGHT JOIN did not change the number of rows, which means that all records in the orders table have corresponding records in order_details.
 No orphan records exist in the joined tables.
+
+### Task 4.3 — Filter by employee_id
+
+Result: 317 rows
+
+### Explanation:
+The WHERE clause filters records where employee_id is greater than 3 and less than or equal to 10.
+This reduces the dataset to only orders handled by selected employees.
