@@ -90,3 +90,11 @@ The query groups records by category name and calculates:
 - average product quantity (AVG)
 
 HAVING is used to filter groups where the average quantity is greater than 21.
+
+## Task 4.6 — ORDER BY
+
+### Result:
+Rows are sorted in descending order based on the number of records in each category.
+
+### Explanation:
+ORDER BY COUNT(*) DESC ensures that categories with the highest number of records appear first.
