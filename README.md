@@ -1,49 +1,49 @@
 # goit-rdb-hw-04
 
-Homework for Topic 4: DDL, DML and complex SQL queries.
+Домашнє завдання до теми 4: DDL, DML та складні SQL-запити.
 
 ---
 
 ## Overview
-This project demonstrates:
-- database schema design using DDL
-- data insertion using DML
-- complex multi-table queries using JOIN
-- data aggregation, filtering and sorting
+Цей проєкт демонструє:
+- проєктування структури бази даних за допомогою DDL
+- наповнення таблиць даними за допомогою DML
+- побудову складних запитів із використанням JOIN
+- агрегацію, фільтрацію та сортування даних
 
 ---
 
 ## Task 1 — DDL
 
-Created database `LibraryManagement` with the following tables:
+Створено базу даних `LibraryManagement` з таблицями:
 - authors
 - genres
 - books
 - users
 - borrowed_books
 
-Implemented:
-- primary keys for all tables
-- foreign key relationships:
+Реалізовано:
+- первинні ключі (PRIMARY KEY) для всіх таблиць
+- зовнішні ключі (FOREIGN KEY):
   - books → authors, genres
   - borrowed_books → books, users
 
-The schema ensures referential integrity and consistent data structure.
+Забезпечено цілісність і узгодженість даних.
 
 ---
 
 ## Task 2 — DML
 
-Inserted test data into all tables:
-- at least one or two records per table
-- all relationships are valid and consistent
-- foreign keys correctly reference parent tables
+Виконано наповнення таблиць тестовими даними:
+- додано по 1–2 записи в кожну таблицю
+- всі зв’язки між таблицями коректні
+- зовнішні ключі посилаються на існуючі записи
 
 ---
 
 ## Task 3 — Complex JOIN
 
-Executed a query combining all tables from the dataset:
+Виконано запит, що об’єднує всі таблиці з датасету:
 - order_details
 - orders
 - customers
@@ -53,89 +53,86 @@ Executed a query combining all tables from the dataset:
 - shippers
 - suppliers
 
-Used `INNER JOIN` with proper key relationships to retrieve a unified dataset.
+Використано `INNER JOIN` із правильними зв’язками між таблицями для отримання узгодженого результату.
 
 ---
 
-## Task 4 — Analytical Queries
+## Task 4 — Аналітичні запити
 
 ### 4.1 COUNT
-Calculated total number of rows in the joined dataset using:
-- `COUNT(*)`
+Обчислено загальну кількість рядків у результаті об’єднання:
+- використано `COUNT(*)`
 
 ---
 
 ### 4.2 LEFT JOIN / RIGHT JOIN
 
-Replaced `INNER JOIN` with `LEFT JOIN` and `RIGHT JOIN`.
+Замінено частину `INNER JOIN` на `LEFT JOIN` та `RIGHT JOIN`.
 
-Result:
-- number of rows remained unchanged
+Результат:
+- кількість рядків не змінилася
 
-Reason:
-- all records have matching relationships across tables
-- additional rows are not introduced
-- further `INNER JOIN` operations filter out unmatched records
+Причина:
+- всі записи мають відповідні зв’язки між таблицями
+- додаткові рядки не з’являються
+- подальші `INNER JOIN` відсікають рядки без відповідностей
 
 ---
 
-### 4.3 Filtering
+### 4.3 Фільтрація
 
-Filtered dataset using:
+Застосовано умову:
 - `employee_id > 3 AND employee_id <= 10`
 
 ---
 
-### 4.4 GROUP BY + Aggregation
+### 4.4 GROUP BY + Агрегація
 
-Grouped results by category name:
-- counted number of rows
-- calculated average quantity (`AVG(order_details.quantity)`)
+Виконано групування за назвою категорії:
+- підраховано кількість рядків
+- обчислено середню кількість товару (`AVG(order_details.quantity)`)
 
 ---
 
 ### 4.5 HAVING
 
-Filtered grouped results:
-- selected only categories where average quantity > 21
+Відфільтровано згруповані дані:
+- залишено тільки ті групи, де середнє значення > 21
 
 ---
 
 ### 4.6 ORDER BY
 
-Sorted results:
-- by row count in descending order
+Виконано сортування:
+- за спаданням кількості рядків
 
 ---
 
 ### 4.7 LIMIT OFFSET
 
-Selected subset of results:
-- skipped first row
-- returned next 4 rows
+Виконано вибірку:
+- пропущено перший рядок
+- виведено наступні 4 рядки
 
 ---
 
 ## Repository Structure
 
-- `queries.sql` — all SQL queries for tasks 1–4
-- `screenshots/` — execution results and queries
-  - `p1_*` — DDL (database and tables)
-  - `p2_*` — data insertion
-  - `p3_*` — JOIN query
-  - `p4_*` — analytical queries
+- `queries.sql` — SQL-запити для пунктів 1–4
+- `screenshots/` — скріншоти виконання запитів
+  - `p1_*` — створення БД і таблиць
+  - `p2_*` — вставка даних
+  - `p3_*` — JOIN-запит
+  - `p4_*` — аналітичні запити
 
 ---
 
-## Conclusion
+## Висновок
 
-All tasks were completed according to the requirements:
-- database schema created
-- data inserted
-- queries executed successfully
-- results validated with screenshots
+Усі завдання виконані відповідно до вимог:
+- створено структуру бази даних
+- заповнено таблиці даними
+- реалізовано складні SQL-запити
+- результати підтверджені скріншотами
 
-The solution is consistent, reproducible and ready for evaluation.
-
----
-
+Рішення є логічним, відтворюваним та готовим до перевірки.
