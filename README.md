@@ -78,3 +78,15 @@ The filtering is applied after JOIN operations, ensuring correct dataset restric
 Data is grouped by category name.
 COUNT(*) returns the number of records per category.
 AVG(order_details.quantity) calculates the average quantity of products within each category.
+
+### Task 4.5 — GROUP BY and AVG
+
+### Result:
+Aggregated data by category with total number of orders and average quantity.
+
+### Explanation:
+The query groups records by category name and calculates:
+- total number of rows per category (COUNT)
+- average product quantity (AVG)
+
+HAVING is used to filter groups where the average quantity is greater than 21.
