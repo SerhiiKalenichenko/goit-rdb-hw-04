@@ -41,10 +41,11 @@ Validated result using COUNT (expected ~518 rows).
 - `screenshots/` — execution results
 - `README.md` — project description
 
-###Task 4.1 — COUNT
+### Task 4.1 — COUNT
 
-##Result: [518]
 
-Explanation:
+Result: [518]
+
+## Explanation:
 COUNT(*) shows total number of rows returned by INNER JOIN across all tables.
 This value is used as baseline for comparing LEFT/RIGHT JOIN behavior.
