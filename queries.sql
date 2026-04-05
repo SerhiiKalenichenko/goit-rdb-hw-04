@@ -63,6 +63,8 @@ INSERT INTO borrowed_books (book_id, user_id, borrow_date, return_date) VALUES
 
 -- ПУНКТ 3. INNER JOIN ВСІХ ТАБЛИЦЬ
 
+USE goit_rdb_hw_03;
+
 SELECT *
 FROM order_details od
 INNER JOIN orders o ON od.order_id = o.id
